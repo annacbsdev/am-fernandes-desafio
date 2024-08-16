@@ -1,23 +1,21 @@
-type Location = {
-  _lat: number;
-  _long: number;
-}
-
-type Planta = {
-  dorms: number;
-  metragem: number;
-  preco: number;
-  vagas: number;
-}
 
 declare type Imovel = {
+  id: string,
   bairro: string;
   cep: string;
   cidade: string;
   fachada: string;
-  location: Location;
+  location: {
+    _lat: number;
+    _long: number;
+  }
   nome: string;
   num: string;
   rua: string;
-  planta: Planta;
+  planta: {
+    dorms: number;
+    metragem: number;
+    preco: number;
+    vagas: number;
+  }
 }

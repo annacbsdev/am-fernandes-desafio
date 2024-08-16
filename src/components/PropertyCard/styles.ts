@@ -6,7 +6,6 @@ export const StyledPropertyCard = styled.div`
     display: flex;
     border: 1px solid black;
     gap: 16px;
-    width: 600px;
 
     img {
         width: 250px;

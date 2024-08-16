@@ -3,7 +3,7 @@ import { colors } from "../../styles";
 
 export const StyledPropertyList = styled.section`
     margin: 40px auto;
-
+    min-height: 90vh;
 
     h1{
         color: ${colors.brown};
@@ -11,8 +11,6 @@ export const StyledPropertyList = styled.section`
         font-size: 32px;
         margin-bottom: 24px;
     }
-
-
 
     button {
         display: flex;

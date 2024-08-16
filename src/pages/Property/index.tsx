@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getPropertyList } from '../../api';
@@ -6,10 +5,10 @@ import { formatPrice, formatCEP } from '../../utils';
 import { IoIosBed } from 'react-icons/io';
 import { FaCar, FaUpRightAndDownLeftFromCenter } from 'react-icons/fa6';
 import { InfoList, StyledPropertyPage, Title } from './styles';
-import mapa from '../../assets/mapa.png'
+import mapa from '../../assets/mapa.png';
 
 const Property = () => {
-    const { id } = useParams<{ id: string }>();
+    const { id } = useParams();
     const [property, setProperty] = useState<Imovel | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
 
@@ -17,7 +16,7 @@ const Property = () => {
         const fetchProperty = async () => {
             try {
                 const properties = await getPropertyList();
-                const foundProperty = properties.find(p => p.num === id); 
+                const foundProperty = properties.find((p: Imovel) => p.id === id);
                 if (foundProperty) {
                     setProperty(foundProperty);
                 } else {
