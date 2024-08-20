@@ -8,30 +8,29 @@ const baseStyles = css`
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   font-size: 18px;
-  font-weight: 500;
 `;
 
 export const PrimaryButton = styled.button`
   ${baseStyles}
-  background-color: ${colors.brown}; 
+  background-color: ${colors.blue}; 
   color: white;
-  border: 1px solid ${colors.brown};
+  border: 1px solid ${colors.blue};
 
   &:hover {
-    background-color: ${colors.hoverBrown}
+    background-color: ${colors.hoverBlue}
   }
 `;
 
 export const SecondaryButton = styled.button`
   ${baseStyles}
-  background-color: white;
+  background-color: transparent;
   border: 1px solid black;
   color: black;
 
   &:hover {
-    color: ${colors.grey}; 
-    border: 1px solid ${colors.grey}
-      }
+    color: ${colors.lightGrey}; 
+    background-color: black;
+  }
 `;
 
 export const TextButton = styled.button`

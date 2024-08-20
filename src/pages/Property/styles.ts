@@ -2,57 +2,89 @@ import styled from "styled-components";
 import { colors } from "../../styles";
 
 export const StyledPropertyPage = styled.section`
-    display: flex;
-    align-items: center;
 
-    .fachada {
-        height: 90vh;
-        width: 40vw;
-        object-fit: cover;
+    margin-bottom: 80px;
+
+    .main {
+        display: flex;
+        align-items: center;
+    
+        .back {
+            display: flex;
+            align-items: center;
+            color: black
+    
+        }
+    
+        .fachada {
+            height: 80vh;
+            width: 40vw;
+            object-fit: cover;
+            border-top-right-radius: 40px;
+            border-bottom-right-radius: 40px;
+        }
+    
+        .property-infos{
+            padding: 40px;
+
+            .back-button {
+                padding: 0;
+            }
+
+            h1 {
+                font-size: 48px;
+                font-weight: 500;
+                margin: 16px 0;
+            }
+    
+            h2 {
+                font-size: 20px;
+                font-weight: normal;
+            }
+    
+            .price {
+                background-color: ${colors.lightBlue};
+                padding: 24px;
+                display: inline-block;
+                margin: 48px 0;
+                h2{
+                    font-size: 48px;
+                    font-weight: 500;
+                }
+                span {
+                    font-size: 20px;
+                }
+            }
+        }
+    
+        
     }
-
-    .property-infos{
-        padding: 40px;
-
+    
+    .address-container{
+        
         h1 {
-            font-size: 40px;
-            color: ${colors.brown};
-            margin-bottom: 48px;
-        }
-
-        h2 {
-            font-size: 64px;
+            font-size: 24px;
+            color: ${colors.blue};
             font-weight: normal;
-            margin-bottom: 64px;
+            
+            margin: 32px 0;
+        }
+
+        img {
+            margin: 24px 0;
+        }
+
+        span {
+            text-decoration: underline;
         }
     }
-
-    .address {
-        margin: 40px 0 64px 0;
-    }
-
 `
 
-export const Title = styled.div`
-
-    hr {
-        height: 3px;
-        width: 52px;
-        background-color: ${colors.brown};
-    }
-
-    h3 {
-        font-size: 20px;
-        font-weight: 500;
-        color: ${colors.brown};
-        margin-top: 4px;
-}
-`
 
 export const InfoList = styled.ul`
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    gap: 32px;
     margin: 40px 0 64px 0;
 
     li {

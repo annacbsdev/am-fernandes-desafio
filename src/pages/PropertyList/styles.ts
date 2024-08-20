@@ -1,12 +1,21 @@
 import styled from "styled-components";
 import { colors } from "../../styles";
 
+
 export const StyledPropertyList = styled.section`
-    margin: 40px auto;
+    padding-top: 40px;
     min-height: 90vh;
 
+    .square {
+        background-color: ${colors.lightBlue};
+        display: block;
+        width: 24px;
+        height: 30px;
+        margin-bottom: 24px;
+    }
+
     h1{
-        color: ${colors.brown};
+        
         font-weight: normal;
         font-size: 32px;
         margin-bottom: 24px;
@@ -41,5 +50,6 @@ export const SearchFields = styled.div`
 export const PropertiesGrid = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 24px
+    gap: 24px;
+    margin-bottom: 40px ;
 `

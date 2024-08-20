@@ -7,14 +7,16 @@ const Header = () => {
     return (
         <S.StyledHeader>
                 <Link to="/">
-                    <img src={logo} alt="ícone de prédio"/>
+                    <img src={logo} alt="Logo da empresa"/>
                 </Link>
                 <nav>
-                <Link to="/properties">
-                    <Button variant='text'>Imóveis</Button>
+                <Link to="/">
+                    <Button variant='text'>Início</Button>
                 </Link>
                     <Button variant='text'>Ajuda</Button>
-                    <Button>Entrar</Button>
+                <Link to="/properties">
+                    <Button>Encontrar imóveis</Button>
+                </Link>
                 </nav>
         </S.StyledHeader>
     )

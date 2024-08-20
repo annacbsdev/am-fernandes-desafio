@@ -5,6 +5,7 @@ export const StyledTextField = styled.input`
     padding: 8px;
     width: 400px;
     font-size: 18px;
+    background-color: transparent;
 
     &::placeholder {
         color: #B1B1B1

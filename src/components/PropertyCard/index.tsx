@@ -27,7 +27,7 @@ const PropertyCard = ({nome, bairro, dorms, fachada, metragem, preco, rua, vagas
                 <p><FaLocationDot /> {rua}, {bairro}</p>
                 <span>{dorms} dorms, {metragem}m²{vagas ? (<span>, {vagas} vaga(s)</span>) : (<span>, sem vagas</span>)}</span>
                 <Link to={`/property/${id}`}>
-                <Button variant="secondary">Mais informações <IoIosArrowForward /></Button>
+                    <Button variant="secondary">Mais informações <IoIosArrowForward /></Button>
                 </Link>
             </div>
         </StyledPropertyCard>

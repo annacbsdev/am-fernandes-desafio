@@ -5,7 +5,6 @@ import Header from './components/Header'
 import AppRoutes from './routes'
 import Footer from './components/Footer'
 
-
 function App() {
 
 

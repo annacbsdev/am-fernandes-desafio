@@ -22,7 +22,7 @@ export const StyledPropertyCard = styled.div`
     
         h2{
             font-weight: bold;
-            color: ${colors.brown};
+            color: ${colors.blue};
             font-size: 18px;
         }
 

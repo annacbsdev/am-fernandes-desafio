@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { getPropertyList } from '../../api';
 import { formatPrice, formatCEP } from '../../utils';
-import { IoIosBed } from 'react-icons/io';
-import { FaCar, FaUpRightAndDownLeftFromCenter } from 'react-icons/fa6';
-import { InfoList, StyledPropertyPage, Title } from './styles';
-import mapa from '../../assets/mapa.png';
+import { IoIosArrowBack, IoIosBed } from 'react-icons/io';
+import { FaCar, FaLocationDot, FaUpRightAndDownLeftFromCenter } from 'react-icons/fa6';
+import { InfoList, StyledPropertyPage} from './styles';
+import Button from '../../components/UI/Button';
+import PropertyMap from '../../components/PropertyMap';
 
 const Property = () => {
     const { id } = useParams();
@@ -32,6 +33,14 @@ const Property = () => {
         fetchProperty();
     }, [id]);
 
+
+    const navigate = useNavigate();
+
+    const handleBack = () => {
+        navigate(-1);  // Volta uma página no histórico
+    };
+
+
     if (loading) {
         return <h1>Carregando...</h1>;
     }
@@ -40,17 +49,21 @@ const Property = () => {
         return <h1>Imóvel não encontrado.</h1>;
     }
 
+
+
     return (
+        <>
         <StyledPropertyPage>
-            <img src={property.fachada} alt={`Fachada de ${property.nome}`} className='fachada'/>
-            <div className='property-infos'>
-                <h1>{property.nome}</h1>
-                <h2>{formatPrice(property.planta.preco)}</h2>
-                <div>
-                    <Title>
-                        <hr />
-                        <h3>Informações</h3>
-                    </Title>
+            <div className='main'>
+                <img src={property.fachada} alt={`Fachada de ${property.nome}`} className='fachada'/>
+                <div className='property-infos'>
+                    <Button variant='text' onClick={handleBack} className='back-button'><IoIosArrowBack /> Voltar</Button>
+                    <h1>{property.nome}</h1>
+                    <h2><FaLocationDot />{property.rua}, {property.bairro}</h2>
+                    <div className='price'>
+                        <h2>{formatPrice(property.planta.preco)}</h2>
+                        <span>Valor à vista</span>
+                    </div>
                     <div>
                         <InfoList>
                             <li>
@@ -64,20 +77,20 @@ const Property = () => {
                             </li>
                         </InfoList>
                     </div>
-                </div>
-                <div>
-                    <Title>
-                        <hr />
-                        <h3>Localização</h3>
-                    </Title>
-                    <div className='address'>
-                        <p>{property.rua}, {property.num} - {property.bairro}</p>
-                        <p>{property.cidade} - {formatCEP(property.cep)}</p>
-                    </div>
-                    <img src={mapa}/>
+                    <Button variant='secondary'>Solicitar uma visita</Button>
                 </div>
             </div>
+            <div className='container address-container'>
+                <h1>Localização</h1>
+                <div className='address'>
+                    <p>{property.rua}, {property.num} - {property.bairro}</p>
+                    <p>{property.cidade} - {formatCEP(property.cep)}</p>
+                </div>
+                <PropertyMap latitude={property.location._lat} longitude={property.location._long}/>
+                <p>Precisa de mais informações? <span>Fale com um especialista.</span></p>
+            </div>
         </StyledPropertyPage>
+        </>
     );
 };
 

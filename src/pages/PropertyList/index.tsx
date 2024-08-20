@@ -91,7 +91,14 @@ const PropertyList = () => {
   //componente
   return (
     <StyledPropertyList className="container">
-      <h1>{sortedProperties.length} imóveis disponíveis</h1>
+        <span className="square"></span>
+        {sortedProperties.length > 1 ? (
+          <h1>{sortedProperties.length} imóveis encontrados</h1>
+        ) : sortedProperties.length === 1 ? (
+          <h1>1 imóvel encontrado</h1>
+        ) : (
+          <h1>Nenhum imóvel encontrado</h1>
+        )}    
       <SearchFields>
         <div>
           <TextField
@@ -129,7 +136,7 @@ const PropertyList = () => {
             />
           ))
         ) : (
-          <p>Nenhum imóvel encontrado.</p>
+          <p>Nenhum imóvel corresponde à busca.</p>
         )}
       </PropertiesGrid>
     </StyledPropertyList>
