@@ -1,28 +1,30 @@
+//react e router
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+//api e funções de formatação
 import { getPropertyList } from '../../api';
 import { formatPrice, formatCEP } from '../../utils';
+//ícones
 import { IoIosArrowBack, IoIosBed } from 'react-icons/io';
 import { FaCar, FaLocationDot, FaUpRightAndDownLeftFromCenter } from 'react-icons/fa6';
-import { InfoList, StyledPropertyPage} from './styles';
+//componentes
 import Button from '../../components/UI/Button';
 import PropertyMap from '../../components/PropertyMap';
+//estilos
+import { InfoList, StyledPropertyPage} from './styles';
 
 const Property = () => {
     const { id } = useParams();
     const [property, setProperty] = useState<Imovel | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
 
+    //função para exibir a propriedade pelo id que está na url
     useEffect(() => {
         const fetchProperty = async () => {
             try {
                 const properties = await getPropertyList();
                 const foundProperty = properties.find((p: Imovel) => p.id === id);
-                if (foundProperty) {
-                    setProperty(foundProperty);
-                } else {
-                    console.log("Propriedade não encontrada.");
-                }
+                setProperty(foundProperty);
             } catch (error) {
                 console.error(error);
             } finally {
@@ -33,11 +35,11 @@ const Property = () => {
         fetchProperty();
     }, [id]);
 
-
+    //navegar para a página anterior (botão de voltar)
     const navigate = useNavigate();
 
     const handleBack = () => {
-        navigate(-1);  // Volta uma página no histórico
+        navigate(-1);
     };
 
 
@@ -48,8 +50,6 @@ const Property = () => {
     if (!property) {
         return <h1>Imóvel não encontrado.</h1>;
     }
-
-
 
     return (
         <>

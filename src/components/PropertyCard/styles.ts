@@ -40,4 +40,19 @@ export const StyledPropertyCard = styled.div`
         }
     }
 
+    @media (max-width: 1024px){
+        width: 80%;
+    }
+
+    @media (max-width: 767px) {
+        flex-direction: column;
+        gap: 0;
+
+        div {
+            padding: 8px;
+        }
+        img{
+            width: 100%;
+        }
+    }
 `

@@ -35,4 +35,19 @@ export const StyledFooter = styled.footer`
         align-items: center;
         margin-top: 16px;
     }
+
+    @media (max-width: 1024px){
+        .footer{
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        h1 {
+            font-size: 18px;
+        }
+
+        h2, p {
+            font-size: 14px;
+        }
+    }
 `

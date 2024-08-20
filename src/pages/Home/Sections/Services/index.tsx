@@ -1,6 +1,7 @@
-import { IoCheckbox } from "react-icons/io5"
 import { StyledServices } from "./styles"
+import { IoCheckbox } from "react-icons/io5"
 
+//array dos serviços oferecidos
 const servicesText = [
     {
         title: 'Consultoria personalizada',

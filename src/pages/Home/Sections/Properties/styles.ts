@@ -57,4 +57,21 @@ export const StyledProperties = styled.section`
         }
     }
 
+    @media (max-width: 1024px) {
+
+        > h1{
+            font-size: 32px;
+        }
+        ul {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+           li {
+            img {
+                height: 400px;
+            }
+           }
+        }
+    }
+
 `

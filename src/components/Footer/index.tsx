@@ -1,5 +1,8 @@
+//estilos
 import { StyledFooter } from "./styles"
+// imagens
 import logo from "../../assets/logo.png"
+//ícones
 import { FaWhatsapp } from "react-icons/fa6"
 import { MdOutlineMailOutline } from "react-icons/md"
 
@@ -15,7 +18,7 @@ const Footer = () => {
                    </div>
                     <div>
                         <p>
-                            <a href="#">Linkedin</a>
+                            <a href="https://www.linkedin.com/in/anna-claudia-barros-silveira/">Linkedin</a>
                         </p>
                         <p>
                             <a href="#">Repositório</a>

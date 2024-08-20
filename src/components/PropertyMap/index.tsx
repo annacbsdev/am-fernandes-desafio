@@ -6,6 +6,7 @@ type PropertyMapProps = {
     longitude: number;
 }
 
+//componente de mapa usando a biblioteca leaflet
 const PropertyMap = ({ latitude, longitude }: PropertyMapProps) => {
     const position: [number, number] = [latitude, longitude];
 

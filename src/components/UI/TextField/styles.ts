@@ -11,4 +11,9 @@ export const StyledTextField = styled.input`
         color: #B1B1B1
     }
 
+    @media (max-width: 767px) {
+        padding: 4px;
+        width: 80%;
+        font-size: 14px;
+    }
 `

@@ -1,5 +1,6 @@
 import * as S  from './styles'
 
+// componente botão com 3 estilos diferentes
 type ButtonProps = {
   children: React.ReactNode;
   variant?: 'primary' | 'secondary' | 'text';

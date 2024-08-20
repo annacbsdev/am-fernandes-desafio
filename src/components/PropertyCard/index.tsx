@@ -1,9 +1,12 @@
+//router
+import { Link } from "react-router-dom";
+//ícones
+import { FaLocationDot } from "react-icons/fa6";
+import { IoIosArrowForward } from "react-icons/io";
+//componente, função de formatar preço e estilos
 import Button from "../UI/Button"
 import { StyledPropertyCard } from "./styles";
 import { formatPrice } from "../../utils";
-import { FaLocationDot } from "react-icons/fa6";
-import { IoIosArrowForward } from "react-icons/io";
-import { Link } from "react-router-dom";
 
 type PropertyCardProps = {
     id: string,

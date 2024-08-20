@@ -27,6 +27,16 @@ export const StyledPropertyList = styled.section`
         padding: 8px;
         gap: 8px;
     }
+
+    @media (max-width: 1024px){
+        padding-left: 24px;
+    }
+
+    @media (max-width: 767px) {
+        h1{
+            font-size: 24px;
+        }   
+    }
 `
 
 export const SearchFields = styled.div`
@@ -44,12 +54,33 @@ export const SearchFields = styled.div`
         }
         
     }
+    @media (max-width: 1024px){
+        flex-direction: column;
+        gap: 16px;
+    }
     
+    @media (max-width: 767px) {
+      .search{
+        flex-direction: column;
+        align-items: flex-start;
+      }   
+      button{
+        padding: 4px;
+        font-size: 14px;
+      }
+    }
 `
 
 export const PropertiesGrid = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
-    margin-bottom: 40px ;
+    margin-bottom: 40px;
+
+    @media (max-width: 1024px){
+        display: flex;
+        flex-direction: column;
+    }
+
+    
 `

@@ -1,10 +1,10 @@
+//react
 import { useEffect, useState } from "react";
+//ícones
 import { IoSearchSharp } from "react-icons/io5";
-
 //componentes e funções
 import PropertyCard from "../../components/PropertyCard";
 import { getPropertyList } from "../../api";
-
 //UI e estilos
 import Button from "../../components/UI/Button";
 import Select from "../../components/UI/Select";
@@ -16,9 +16,11 @@ const PropertyList = () => {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
+  //campo de busca
   const [searchText, setSearchText] = useState<string>(""); 
   const [filteredProperties, setFilteredProperties] = useState<Imovel[]>([]);
 
+  //ordenação
   const [sortedProperties, setSortedProperties] = useState<Imovel[]>([]);
   const [sortOption, setSortOption] = useState<string>("Nome");
 
@@ -67,7 +69,7 @@ const PropertyList = () => {
     setSortOption(event.target.value);
   };
 
-  //Busca por nome
+  //Busca por nome, bairro ou rua
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchText(event.target.value);
   };
@@ -100,7 +102,7 @@ const PropertyList = () => {
           <h1>Nenhum imóvel encontrado</h1>
         )}    
       <SearchFields>
-        <div>
+        <div className="search">
           <TextField
             placeholder="Busque por um imóvel, bairro ou rua"
             value={searchText}

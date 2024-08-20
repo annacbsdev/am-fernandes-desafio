@@ -36,4 +36,28 @@ export const StyledServices = styled.div`
             }
         }
     }
+
+    @media (max-width: 1024px){
+        h1{
+            font-size: 32px;
+            text-align: center;
+        }
+
+        ul {
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            li{
+                width: 70%;
+
+                h2 {
+                    font-size: 18px;
+                }
+
+                p {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
 `

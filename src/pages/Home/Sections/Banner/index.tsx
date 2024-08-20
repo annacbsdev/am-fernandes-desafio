@@ -1,6 +1,10 @@
+//router
 import { Link } from 'react-router-dom';
+//imagens
 import casal from '../../../../assets/casal.png'
+//botão
 import Button from '../../../../components/UI/Button'
+//ícones
 import { StyledBanner } from './styles'
 import { IoIosArrowForward } from "react-icons/io";
 

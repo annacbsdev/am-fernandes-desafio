@@ -78,6 +78,43 @@ export const StyledPropertyPage = styled.section`
             text-decoration: underline;
         }
     }
+
+    @media (max-width: 1024px) {
+
+        .main {
+            flex-direction: column;
+            align-items: flex-start;
+
+            .fachada {
+                width: 100%;
+                height: 60vh;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+
+            .property-infos{
+                padding: 24px;
+                h1 {
+                    font-size: 32px;
+                }
+                h2 {
+                    font-size: 18px;
+                }
+                .price {
+                    margin: 16px 0;
+
+                    h2 {
+                        font-size: 32px;
+                    }
+                }
+            }
+
+        }
+
+        .address-container {
+            padding-left: 24px;
+        }
+    }
 `
 
 
@@ -91,5 +128,10 @@ export const InfoList = styled.ul`
         display: flex;
         align-items: center;
         gap: 8px
+    }
+
+
+    @media (max-width:1024px) {
+        margin: 20px 0 40px;
     }
 `

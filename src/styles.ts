@@ -26,6 +26,14 @@ const GlobalCss = createGlobalStyle`
     max-width: 1400px;
     width: 100%;
     margin: 0 auto;
+
+    @media (max-width: 1400px) {
+        width: 90%;
+    }
+
+    @media (max-width: 1024px) {
+        width: 100%;
+    }
   }
 
 `

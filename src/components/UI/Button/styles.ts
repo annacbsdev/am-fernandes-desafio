@@ -8,6 +8,10 @@ const baseStyles = css`
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   font-size: 18px;
+  @media (max-width: 1024px){
+    font-size: 16px;
+    padding: 8px 20px;
+  }
 `;
 
 export const PrimaryButton = styled.button`
@@ -19,6 +23,8 @@ export const PrimaryButton = styled.button`
   &:hover {
     background-color: ${colors.hoverBlue}
   }
+
+  
 `;
 
 export const SecondaryButton = styled.button`

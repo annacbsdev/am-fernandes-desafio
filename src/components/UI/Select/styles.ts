@@ -5,4 +5,10 @@ export const StyledSelect = styled.select`
     padding: 8px;
     font-size: 18px;
     background-color: transparent;
+
+    @media (max-width: 767px) {
+        padding: 4px;
+        width: 30%;
+        font-size: 14px;
+    }
 `

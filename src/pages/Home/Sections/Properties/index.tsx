@@ -1,15 +1,17 @@
+//react e router
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+//api
 import { getPropertyList } from "../../../../api";
+//botão, ícone e estilos
 import Button from "../../../../components/UI/Button"
 import { FaLocationDot } from "react-icons/fa6";
 import { StyledProperties } from "./styles";
-import { Link } from "react-router-dom";
-
-
 
 const Properties = () => {
     const [firstThreeProperties, setFirstThreeProperties] = useState<Imovel[]>([])
 
+    //função para pegar apenas os três primeiros imóveis da api
     useEffect(() => {
         async function getFirstThreeProperties() {
             try {
@@ -17,7 +19,7 @@ const Properties = () => {
                 const firstThree = properties.slice(0, 3);
                 setFirstThreeProperties(firstThree);
             } catch (error) {
-                console.error('Erro ao obter propriedades:', error);
+                console.error(error);
             }
         }
         getFirstThreeProperties()
