@@ -21,7 +21,7 @@ const Footer = () => {
                             <a href="https://www.linkedin.com/in/anna-claudia-barros-silveira/">Linkedin</a>
                         </p>
                         <p>
-                            <a href="#">Repositório</a>
+                            <a href="https://github.com/annacbsdev/am-fernandes-desafio">Repositório</a>
                         </p>
                     </div>
                 </div>
